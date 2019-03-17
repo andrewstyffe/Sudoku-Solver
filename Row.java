@@ -1,4 +1,4 @@
-//Column class
+//Row class
 
 import java.util.*;
 
