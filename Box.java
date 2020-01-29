@@ -1,5 +1,3 @@
-//Box class
-
 import java.util.*;
 
 public class Box implements Comparable<Box> {

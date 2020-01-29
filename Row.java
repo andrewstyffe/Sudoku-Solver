@@ -1,5 +1,3 @@
-//Column class
-
 import java.util.*;
 
 public class Row implements Comparable<Row> {
@@ -15,12 +13,12 @@ public class Row implements Comparable<Row> {
 		return values;
 	}
 
-	//Returns the leading entry in a column
+	//Returns the leading entry in a row
 	public String getFirst() {
 		return (String)values.toArray()[0];
 	}
 
-	//Compares the leading entries of 2 columns
+	//Compares the leading entries of 2 rows
 	public int compareTo(Row o) {
 		int cmp = first.compareTo(o.getFirst());
 		return cmp;

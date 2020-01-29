@@ -1,5 +1,3 @@
-//Column class
-
 import java.util.*;
 
 public class Column implements Comparable<Column> {

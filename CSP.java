@@ -1,9 +1,3 @@
-/* 
-I was given this file as part of a project for school, 
-and thus I don't take any credit for it.
-This program models a CSP problem.
-*/
-
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;

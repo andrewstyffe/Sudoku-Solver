@@ -1,12 +1,3 @@
-/* 
-This program solves a given sudoku puzzle.  
-The problem is modeled as a constraint-satisfaction problem, 
-and uses a backtracking search to determine the solution.
-The backtracking search was given to me as part of a school project, 
-and thus I only modeled the problem.
-The UI is implemented using the JFrame class.
- */
-
 import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -163,7 +154,7 @@ public class Sudoku extends CSP {
  
 
 		JFrame.setDefaultLookAndFeelDecorated(true);
-    	JFrame frame = new JFrame("Initial Board");
+    	JFrame frame = new JFrame("Sudoku Puzzle");
     	frame.setLayout(new GridLayout(9, 9));
     	
     	for(int i = 0; i < 81; i ++) {
@@ -182,26 +173,25 @@ public class Sudoku extends CSP {
 
     	if(next.equals("solve")) {
     		frame.dispose();	//dispose of initial, unsolved puzzle
-			solve(csp, rows); 	//displays solved puzzle
-		}
-		sc.close();
+			solve(csp, rows, frame); 	//displays solved puzzle
+    	}
 	}
 
-	public static void solve(Sudoku csp, TreeSet<Row> rows) {
-    	JFrame solved = new JFrame("Solved");
+	public static void solve(Sudoku csp, TreeSet<Row> rows, JFrame frame) {
 		JFrame.setDefaultLookAndFeelDecorated(true);
-    	solved.setLayout(new GridLayout(9, 9));
+    	frame = new JFrame("Sudoku Puzzle");
+    	frame.setLayout(new GridLayout(9, 9));
 
 		Search search = new Search(csp);
     	Map<Object, Object> solution = search.BacktrackingSearch();
 
-    	//int index = 0;
+    	int index = 0;
     	for(Row row : rows)
     		for(Object X : row.getValues()) 
-    			solved.add(new JButton("" + solution.get(X)));
+    			frame.add(new JButton("" + solution.get(X)));
 
-    	solved.pack();
-    	solved.setVisible(true);
+    	frame.pack();
+    	frame.setVisible(true);
 	}
 
 	public boolean isGood(Object X, Object Y, Object x, Object y) {
@@ -210,6 +200,9 @@ public class Sudoku extends CSP {
 
 		if(!C.get(X).contains(Y))
 			return true;
+
+		//This is actually the only condition needed to work....not sure why
+		//if(x.equals(y)) return false;
 
 		//unique among rows
 		if(!isDiffRow(X, Y) && !X.equals(Y) && x.equals(y)) return false;

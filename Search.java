@@ -1,9 +1,3 @@
-/* 
-I was given this file as part of a project for school, 
-and thus I don't take any credit for it.
-This program performs a backtracking search on the CSP to determine the solution.
-*/
-
 import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.Map;
