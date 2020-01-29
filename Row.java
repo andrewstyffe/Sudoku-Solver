@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+//Row class
+
+>>>>>>> 46cda60e79dfdb318c17d1ae4c2b2a30d05d7b70
 import java.util.*;
 
 public class Row implements Comparable<Row> {
