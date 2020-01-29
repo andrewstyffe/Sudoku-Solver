@@ -1,0 +1,6 @@
+# Virtual Environment
+sudoku/
+
+# File Types
+*.class
+pyvenv.cfg
